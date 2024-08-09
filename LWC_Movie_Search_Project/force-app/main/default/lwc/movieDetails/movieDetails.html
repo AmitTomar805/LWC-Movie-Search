@@ -1,3 +1,28 @@
 <template>
-    
+    <template lwc:if={loadDetails}>
+        <div class="slds-var-p-around_small container">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-var-m-around_small movie-poster">
+                    <img src={movieDetails.Poster} alt={movieDetails.Title} />
+                </div>
+                <div class="slds-col slds-var-t-around_small">
+                    <h1 class="movie-title">{movieDetails.Title}</h1>
+                    <div class="slds-var-m-around_small">
+                        <p><strong>Year:</strong> {movieDetails.Year}</p>
+                        <p><strong>Rated:</strong> {movieDetails.Rated}</p>
+                        <p><strong>Released:</strong> {movieDetails.Released}</p>
+                        <p><strong>Runtime:</strong> {movieDetails.Runtime}</p>
+                        <p><strong>Genre:</strong> {movieDetails.Genre}</p>
+                        <p><strong>Director:</strong> {movieDetails.Director}</p>
+                        <p><strong>Writer:</strong> {movieDetails.Writer}</p>
+                        <p><strong>Actors:</strong> {movieDetails.Actors}</p>
+                        <p><strong>Plot:</strong> {movieDetails.Plot}</p>
+                        <p><strong>Language:</strong> {movieDetails.Language}</p>
+                        <p><strong>Country:</strong> {movieDetails.Country}</p>
+                        <p><strong>Awards:</strong> {movieDetails.Awards}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
 </template>

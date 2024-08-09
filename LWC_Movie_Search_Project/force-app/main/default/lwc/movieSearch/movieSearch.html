@@ -1,6 +1,6 @@
 <template>
     <!-- Filter Section -->
-    <div>
+    <div class="filterStyle">
         <lightning-layout horizontal-align="center">
             <lightning-layout-item padding="around-small" 
             size="3">
@@ -43,7 +43,23 @@
         </lightning-layout>
     </div>
     <!-- Display Section -->
-    <div>
-
+    <div if:true={displaySearchResult} class="slds-var-m-top_large slds-scrollable_y displayStyle slds-box">
+        <lightning-layout 
+            horizontal-align="center" 
+            multiple-rows="true"
+        >
+            <template for:each={searchResult} for:item="searchItem">
+                <lightning-layout-item 
+                    key={searchItem.imdbID} 
+                    size="3" 
+                    padding="around-small"
+                >
+                <c-movie-tile movie={searchItem} selected-movie-id={selectedMovie}
+                onselectedmovie={handleSelectedMovie}
+                >
+                </c-movie-tile>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
     </div>
 </template>

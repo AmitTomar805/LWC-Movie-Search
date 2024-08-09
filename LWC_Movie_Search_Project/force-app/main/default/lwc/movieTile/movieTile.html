@@ -1,3 +1,10 @@
 <template>
-    
+    <div class={tileSelected} onclick={clickHandler}>
+        <div class="innerTile">
+            <img src={movie.Poster}></img>
+            <div class="title">
+                <h1>{movie.Title}</h1>
+            </div>
+        </div>
+    </div>
 </template>
